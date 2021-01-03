@@ -1,17 +1,78 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Marketplace</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"></head>
-<body>
-  <app-root></app-root>
-<script src="{{ url_for('static', filename='runtime.js') }}" defer></script>
-<script src="{{ url_for('static', filename='polyfills.js') }}" defer></script>
-<script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
-<script src="{{ url_for('static', filename='vendor.js') }}" defer></script>
-<script src="{{ url_for('static', filename='main.js') }}" defer></script></body>
-</html>
+{% extends "base.html" %} {% block content %}
+  <main id="main">
+    <section class="section site-portfolio">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+            <h2>歡 迎 來 到 K M I N I 小 天 地</h2>
+            <p class="mb-0">9 4 要 讓 你 離 不 開 我</p>
+          </div>
+          <div class="col-md-12 col-lg-6 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
+            <div id="filters" class="filters">
+              <a href="#" data-filter="*" class="active">全 部</a>
+              <a href="#" data-filter=".pay">繳 費</a>
+              <a href="#" data-filter=".friend">交 友 軟 體</a>
+              <a href="#" data-filter=".finance">理 財</a>
+            </div>
+          </div>
+        </div>
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+          <div class="item pay col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="#" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>PI錢包</h3>
+                <span>Pay</span>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static',filename='img/PI_logo.jpg') }}">
+            </a>
+          </div>
+          <div class="item friend col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="#" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Tinder</h3>
+                <span>friend</span>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static',filename='img/tinder-logo.png') }}">
+            </a>
+          </div>
+          <div class="item friend col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="#" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>BeeTalk</h3>
+                <span>friend</span>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static',filename='img/beetalk.png') }}">
+            </a>
+          </div>
+          <div class="item friend col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="#" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Circle</h3>
+                <span>friend</span>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static',filename='img/circle.png') }}">
+            </a>
+          </div>
+          <div class="item pay col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="#" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Line Pay</h3>
+                <span>Pay</span>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static',filename='img/linepay-logo-tw.png') }}">
+            </a>
+          </div>
+          <div class="item finance col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="#" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>GP-Invest</h3>
+                <span>finance</span>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static',filename='img/invest.jpg') }}">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End  Works Section -->
+  </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>K M i n i</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link type="icon" href="{{ url_for('static',filename='img/favicon.png') }}" rel="icon">
+    <link type="icon" href="{{ url_for('static',filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/icofont/icofont.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/aos/aos.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static',filename='vendor/line-awesome/css/line-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static',filename='vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+        <div class="container py-2 py-md-5">
+            <div class="row align-items-start">
+                <div class="col-md-2">
+                    <ul class="custom-menu">
+                        <li class="active"><a href="/">首 頁</a></li>
+                        <li><a href="#">關 於 我 們</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 d-none d-md-block  mr-auto">
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav class="navbar navbar-light custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">K M I N I</a>
+
+            <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+            </a>
+
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ url_for('static',filename='vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/php-email-form/validate.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/aos/aos.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ url_for('static',filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ url_for('static',filename='vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
