@@ -1,4 +1,13 @@
 {% extends "base.html" %} {% block content %}
+<nav class="navbar navbar-light custom-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">K M I N I</a>
+
+    <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+      <span></span>
+    </a>
+  </div>
+</nav>
   <main id="main">
     <section class="site-portfolio">
       <div class="container">
@@ -18,7 +27,7 @@
         </div>
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
           <div class="item pay col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
-            <a href="#" class="item-wrap fancybox">
+            <a href="pi-page" class="item-wrap fancybox" data-transition="slide">
               <div class="work-info">
                 <h3>PI錢包</h3>
                 <span>Pay</span>

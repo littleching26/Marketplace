@@ -1,0 +1,39 @@
+.parking-comment {
+    font-size: 1vmin;
+    color: gray;
+}
+
+.selected {
+    margin-top: 3%;
+}
+.selected:hover{
+    cursor: pointer;
+    animation-name:seletedAnimation;
+    animation-duration:1s;
+    background-color: #cad6f1;
+}
+
+@keyframes seletedAnimation{
+    from{
+        background-color: #ffffff;
+    }
+    to{
+        background-color: #cad6f1;
+    }
+}
+
+.discount {
+    font-size: 2vmin;
+    color: #e62665;
+}
+
+#cars, #carNumber1, #carNumber2{
+    width: 100%;
+}
+
+.searchParking{
+    background-color: #436dc9;
+    font-size: 5vmin;
+    width: 100%;
+    margin-top: 3%;
+}

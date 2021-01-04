@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block content %}
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/pageTransfer.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/parking.css') }}">
+</head>
+<nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="parking">路邊停車費</a>
+    </div>
+</nav>
+<main id="main">
+    <section class="site-portfolio">
+        <div class="container">
+            <!-- <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200"> -->
+                <div class="row">
+                    <div class="parking-comment">請選擇繳費縣市</div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">台北市路邊停車費</div>
+                    <div class="discount col-3">75折優惠</div>
+                    <div class="col-1">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">新北市路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">宜蘭縣路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">桃園市路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">基隆市路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">新竹縣路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">新竹市路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">台中市路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+                <div class="row selected" onclick="searchCarNumber()">
+                    <div class="col-8">高雄市路邊停車費</div>
+                    <div class="col-4">></div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </section><!-- End  Works Section -->
+</main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/parking.css') }}">
+</head>
+<nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="parking">搜尋車牌</a>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="parking-comment">請輸入資料</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">選擇車種</div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <select name="cars" id="cars" class="selectpicker">
+                <option value="mortocycle">機車</option>
+                <option value="car">汽車</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">輸入車號</div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <input type="text" id="carNumber1" class="form-control">
+        </div>
+        <div class="col-2">
+            <span>-</span>
+        </div>
+        <div class="col-5">
+            <input type="text" id="carNumber2" class="form-control">
+        </div>
+    </div>
+    <hr>
+    <button type="button" class="btn btn-primary searchParking" data-toggle="modal" data-target="#surePay">查詢待繳帳單</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="surePay" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">停車費</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                本次繳費金額為$20元，是否確定繳費?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#successPaid">繳費</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="successPaid" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                繳費成功
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="dismissAllModal()">關閉</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

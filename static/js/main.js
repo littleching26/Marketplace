@@ -69,3 +69,12 @@
   });
 
 })(jQuery);
+
+function searchCarNumber(){
+  window.location.href = 'searchCarNumber'
+}
+
+function dismissAllModal(){
+  $('#successPaid').modal('hide');
+  $('#surePay').modal('hide');
+}

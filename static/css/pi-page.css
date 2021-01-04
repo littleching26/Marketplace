@@ -1,0 +1,15 @@
+.img-description{
+    font-size: 2vmin;
+    color: #1d1f14;
+    text-align: center;
+}
+img{
+    width: 125px;
+    height: 125px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#main{
+    margin-top: 3%;
+}

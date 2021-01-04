@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/pageTransfer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/pi-page.css') }}">
+</head>
+<nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="pi-page">生活繳費王</a>
+
+        <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+            <span></span>
+        </a>
+    </div>
+</nav>
+<main id="main">
+    <section class="site-portfolio">
+        <div class="container">
+            <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-4 col-sm-4 col-md-2 col-lg-2 mb-4">
+                    <a href="parking" class="item-wrap fancybox" >
+                        <img class="img-fluid" src="{{ url_for('static',filename='img/parking.png') }}">
+                        <div class="img-description">路邊停車費</div>
+                    </a>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 mb-4">
+                    <a href="#" class="item-wrap fancybox">
+                        <img class="img-fluid" src="{{ url_for('static',filename='img/electric.jpg') }}">
+                        <div class="img-description">電費</div>
+                    </a>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 mb-4">
+                    <a href="#" class="item-wrap fancybox">
+                        <img class="img-fluid" src="{{ url_for('static',filename='img/water_fee.jpg') }}">
+                        <div class="img-description">水費</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section><!-- End  Works Section -->
+</main><!-- End #main -->
+{% endblock %}
