@@ -6,6 +6,10 @@
 */
 (function($) {
   "use strict";
+  $(document).ready(function () {
+    $('.img-fluid').height($('.img-fluid').width());
+    console.log('--display height--', $('.img-fluid').height());
+  })
 
   var burgerMenu = function() {
     $('.burger').click(function(e) {
