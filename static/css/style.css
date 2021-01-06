@@ -8,9 +8,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
+html, body {
+  margin: 0%;
+}
 body {
-  font-family: "Inconsolata", monospace;
+  font-family: "微軟正黑體";
   color: #0d1e2d;
 }
 
@@ -111,7 +113,6 @@ h2 {
   color: #fff;
   opacity: 0;
   visibility: hidden;
-  margin-top: 20px;
   transition: .3s all ease;
 }
 
@@ -145,6 +146,10 @@ h2 {
   visibility: visible;
 }
 
+.align-items-center{
+  margin-bottom: 5%;
+}
+
 .testimonial-wrap {
   padding: 50px 50px 80px 50px;
   background: #eceff2;
@@ -176,6 +181,23 @@ h2 {
 
 .heading {
   font-size: 28px;
+}
+
+.app-title {
+  font-weight: 350;
+  font-size: 4vmin;
+  height: fit-content;
+  line-height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-content {
+  font-weight: 100;
+  font-size: 3vmin;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .readmore {
@@ -510,3 +532,68 @@ h2 {
 .social a:hover {
   color: #000;
 }
+
+/*---------------
+# 凱基銀行
+---------------*/
+.title-gap {
+  margin: 0%;
+  width: 100%;
+  background-color: #F5F5F5;
+  height: 0.7vmin;
+}
+
+.row {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.nav-icon1 {
+  float: right;
+  margin-top: 5px;
+}
+
+.nav-icon2 {
+  float: right;
+  margin-top: 7px; 
+}
+
+.block-title {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+#logoSize {
+  animation: logo-loading 1.5s alternate ease-in;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes logo-loading{
+    0%   {transform: scale(.8); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
+}
+
+.content-gap{
+  margin: 0%;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #F5F5F5;
+  height: 2vmin;
+}
+
+.img-description {
+  color: #3D3935;
+  font-size: 3vmin;
+  text-align: center;
+  margin-top: 10px;
+  /* letter-spacing: 1px; */
+}
+
+.content-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

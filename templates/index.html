@@ -1,5 +1,63 @@
 {% extends "base.html" %} {% block content %}
-<nav class="navbar navbar-light custom-navbar">
+<div class="block-title">捷徑</div>
+<div class="row">
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">Parkpay繳停車</div>
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/gang.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">社區幫</div>
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/Group 1897.png') }}" alt="讀不到圖片拉">
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/Group 1897.png') }}" alt="讀不到圖片拉">
+  </div>
+</div>
+<div class="content-gap"></div>
+<div class="block-title">繳費支付</div>
+<div class="row">
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">生活繳費王</div>
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">Hami Pay生活繳費</div>
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">CW Money</div>
+  </div>
+</div>
+<div class="content-gap"></div>
+<div class="block-title">社區服務</div>
+<div class="row">
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/netLife.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">今網智生活</div>
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/growgrow.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">果果智慧<br>社區</div>
+  </div>
+</div>
+<div class="content-gap"></div>
+<div class="block-title">餐飲</div>
+<div class="row">
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">uniqlo</div>
+  </div>
+  <div class="col-3">
+    <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉">
+    <div class="img-description">gap</div>
+  </div>
+</div>
+<div class="content-gap"></div>
+<!-- <nav class="navbar navbar-light custom-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">K M I N I</a>
 
@@ -7,16 +65,16 @@
       <span></span>
     </a>
   </div>
-</nav>
-<main id="main">
+</nav> -->
+<!-- <main id="main">
   <section class="site-portfolio">
     <div class="container">
-      <div class="row mb-5 align-items-center">
-        <div class="col-md-12 mb-4 mb-lg-0" data-aos="fade-up">
+      <div class="row align-items-center"> -->
+        <!-- <div class="col-md-12 mb-4 mb-lg-0" data-aos="fade-up">
           <h2>歡迎來到 K M I N I 小天地</h2>
           <p class="mb-0">9 4 要 讓 你 離 不 開 我</p>
-        </div>
-        <div class="col-md-12 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
+        </div> -->
+        <!-- <div class="col-md-12 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
           <div id="filters" class="filters">
             <a href="#" data-filter="*" class="active">全 部</a>
             <a href="#" data-filter=".pay">繳 費</a>
@@ -24,18 +82,20 @@
             <a href="#" data-filter=".finance">理 財</a>
           </div>
         </div>
-      </div>
-      <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-        <div class="item pay col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="pi-page" class="item-wrap fancybox" data-transition="slide">
-            <div class="work-info">
-              <h3>PI錢包</h3>
-              <span>Pay</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/PI_logo.jpg') }}">
-          </a>
-        </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+      </div> -->
+      <!-- <div id="portfolio-grid" class="no-gutter" data-aos="fade-up" data-aos-delay="200"> -->
+        <!-- <div class="row">
+          <div class="item pay col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
+            <a href="pi-page" class="item-wrap fancybox" data-transition="slide">
+              <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/pay/parking.png') }}">
+            </a>
+          </div>
+          <div class="col-9 col-sm-9 col-md-9 col-lg-9 mb-9 app-title">停車大聲公<br>
+            <span class="app-content">在觀光景點找停車位絕對是十大頭痛問題之一，載著女友的你，絕對不會想要有找不到停車位的窘境。就編輯自身的經驗分享，真心覺得找不到停車位的時候很容易引發情侶之間吵架，為了小事情惹惱情緒傷害感情十分划不來。貼心男友可善用停車大聲公，絕對不讓女友等待過久的時間找停車位，讓約會過程更加順利！</span>
+          </div>
+        </div> -->
+        
+        <!-- <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>taxi-go</h3>
@@ -43,8 +103,8 @@
             </div>
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/TaxiGo.png') }}">
           </a>
-        </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        </div> -->
+        <!--<div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>50嵐</h3>
@@ -53,7 +113,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/50.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>健康人生</h3>
@@ -62,7 +122,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/health2Sync.png') }}">
           </a>
         </div>
-        <div class="item pay col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item pay col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>Line Pay</h3>
@@ -71,7 +131,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/linepay-logo-tw.png') }}">
           </a>
         </div>
-        <div class="item finance col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item finance col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>GP-Invest</h3>
@@ -80,7 +140,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/invest.jpg') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>潔客幫</h3>
@@ -89,7 +149,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/jacker.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>global mall</h3>
@@ -98,7 +158,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/globalMall.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>iCHEF</h3>
@@ -107,7 +167,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/iCHEF.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>user eats</h3>
@@ -116,7 +176,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/uber-eats.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>PChome</h3>
@@ -125,7 +185,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/PChome24h.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>加天使</h3>
@@ -134,7 +194,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/home_angel.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>優照護</h3>
@@ -143,7 +203,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/care.jpg') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>food panda</h3>
@@ -152,7 +212,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/foodPanda.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>約翰紅茶</h3>
@@ -161,7 +221,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/john_tee.jpg') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>蝦皮</h3>
@@ -170,7 +230,7 @@
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/shopee.png') }}">
           </a>
         </div>
-        <div class="item life col-3 col-sm-2 col-md-2 col-lg-2 mb-2">
+        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
           <a href="#" class="item-wrap fancybox">
             <div class="work-info">
               <h3>Friday Shopping</h3>
@@ -178,8 +238,8 @@
             </div>
             <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/friDayShopping.png') }}">
           </a>
-        </div>
-      </div>
-  </section><!-- End  Works Section -->
-</main><!-- End #main -->
+        </div> -->
+      <!-- </div> -->
+  <!-- </section>End  Works Section -->
+<!-- </main>End #main -->
 {% endblock %}

@@ -34,7 +34,19 @@
 </head>
 
 <body>
-    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="row">
+        <div class="col-6" id="logoSize">
+            <a href="/">
+                <img id="logoImg" src="{{ url_for('static',filename='img/kgi-logo.jpeg') }}" alt="讀不到圖片拉">
+            </a>
+        </div>
+        <div class="col-6" id="logoBanner">
+            <img id="logoNav" class="nav-icon1" src="{{ url_for('static',filename='img/icon-6.png') }}" alt="讀不到圖片拉">
+            <img id="logoAudio" class="nav-icon2" src="{{ url_for('static',filename='img/group-1841.png') }}" alt="讀不到圖片拉">
+        </div>
+    </div>
+    <div class="title-gap"></div>
+    <!-- <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
         <div class="container py-2 py-md-5">
             <div class="row align-items-start">
                 <div class="col-md-2">
@@ -49,14 +61,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     
     {% block content %}
     {% endblock %}
 
     <!-- Vendor JS Files -->
-    <script type="text/javascript" src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+    <!-- jQuery-2.2.4 js -->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'vendor/jquery/jquery-2.2.4.min.js') }}"></script>
     <script type="text/javascript"
         src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script type="text/javascript"
