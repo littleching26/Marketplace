@@ -1,11 +1,3 @@
-/**
-* Template Name: MyPortfolio - v2.2.0
-* Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-
 $(document).ready(function () {
   var resizeTimeout;
   $('#logoNav').height($(window).height() * 0.07);
@@ -19,82 +11,51 @@ $(document).ready(function () {
       $('#logoAudio').height($(window).innerHeight() * 0.06);
     }, 100);
   })
+
+  $('#welcomePage').modal('show');
+  clearTimeout(resizeTimeout)
+  esizeTimeout = setTimeout(function () {
+    $('#welcomePage').modal('hide');
+  }, 2000);
+  
 })
 
-// (function($) {
-  // "use strict";
+function userLoginInfo() {
+  var firstName = $('#firstName').val();
+  var secondName = $('#secondName').val();
+  if (validationSubmit()){
+    var fullName = firstName.toLowerCase() + ' ' + secondName.toLowerCase();
+    window.location.href = '/index/' + fullName;
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/index",
+    //   contentType: "application/json",
+    //   data: JSON.stringify({ USER_NAME: fullName }),
+    //   dataType: "json",
+    //   success: function (response) {
+    //     document.write(response);
+    //   },
+    //   error: function (err) {
+    //     console.log(err);
+    //   }
+    // });
+  }
+
+  //檢查是否輸入完整
+  function validationSubmit() {
+    if (firstName == '') {
+      $('#inputCompleteFirstName').css('visibility', 'visible');
+      return false;
+    } else {
+      $('#inputCompleteFirstName').css('visibility', 'hidden');
+    }
+    if (secondName == '') {
+      $('#inputCompleteSecondName').css('visibility', 'visible');
+      return false;
+    } else {
+      $('#inputCompleteSecondName').css('visibility', 'hidden');
+    }
+    return true;
+  }
   
-
-  
-
-  // var burgerMenu = function() {
-  //   $('.burger').click(function(e) {
-  //     $(window).scrollTop(0);
-  //     if (!$('.burger').hasClass('active'))
-  //       $('.burger').addClass('active');
-  //     else
-  //       $('.burger').removeClass('active');
-  //   });
-  // }
-  // burgerMenu();
-
-  // var siteIstotope = function() {
-  //   var $container = $('#portfolio-grid').isotope({
-  //     itemSelector: '.item',
-  //     isFitWidth: true
-  //   });
-
-  //   $(window).resize(function() {
-  //     $container.isotope({
-  //       columnWidth: '.col-sm-3'
-  //     });
-  //   });
-
-  //   $container.isotope({
-  //     filter: '*'
-  //   });
-
-  //   $('#filters').on('click', 'a', function(e) {
-  //     e.preventDefault();
-  //     var filterValue = $(this).attr('data-filter');
-  //     $container.isotope({
-  //       filter: filterValue
-  //     });
-  //     $('#filters a').removeClass('active');
-  //     $(this).addClass('active');
-  //   });
-  // }
-  // $().on('load', function() {
-  //   siteIstotope();
-  // });
-
-  // var siteOwlCarousel = function() {
-  //   $('.testimonial-carousel').owlCarousel({
-  //     center: true,
-  //     items: 1,
-  //     loop: true,
-  //     margin: 0,
-  //     autoplay: true,
-  //     smartSpeed: 1000,
-  //   });
-  // };
-  // siteOwlCarousel();
-
-  // $(window).on('load', function() {
-  //   AOS.init({
-  //     easing: 'ease',
-  //     duration: 1000,
-  //     once: true
-  //   });
-  // });
-
-// })(jQuery);
-
-// function searchCarNumber(){
-//   window.location.href = 'searchCarNumber'
-// }
-
-// function dismissAllModal(){
-//   $('#successPaid').modal('hide');
-//   $('#surePay').modal('hide');
-// }
+}

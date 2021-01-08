@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<div class="block-title col-12">使用者登入(英文名字)</div>
+<div class="row">
+    <div class="col-6">
+        First Name:
+        <input type="text" class="form-control inputName" id="firstName" aria-describedby="nameHelp"
+            placeholder="ex: Clay">
+        <div class="display-error" id="inputCompleteSecondName">請輸入完整</div>
+    </div>
+    <div class="col-6">
+        Second Name:
+        <input type="text" class="form-control inputName" id="secondName" aria-describedby="nameHelp"
+            placeholder="ex: Lin">
+        <div class="display-error" id="inputCompleteFirstName">請輸入完整</div>
+    </div>
+</div>
+<div class="align-center login-button" onclick="userLoginInfo()">登 入</div>
+<div class="content-gap"></div>
+
+{% endblock %}

@@ -57,6 +57,22 @@
   </div>
 </div>
 <div class="content-gap"></div>
+
+<div class="modal fade" id="welcomePage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h5 class="modal-title" id="exampleModalLabel">歡迎回來！</h5>
+        <img class="indexPageImg" src="{{ url_for('static',filename=imgUrl) }}" alt="找不到圖片拉">
+        <div>{{userInformation['USER_NAME']}}</div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- <nav class="navbar navbar-light custom-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">K M I N I</a>

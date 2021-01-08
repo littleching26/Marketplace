@@ -560,7 +560,6 @@ h2 {
 
 .block-title {
   margin-top: 10px;
-  margin-left: 20px;
   margin-bottom: 10px;
 }
 
@@ -586,6 +585,7 @@ h2 {
   color: #3D3935;
   font-size: 3vmin;
   text-align: center;
+  line-height: 100%;
   margin-top: 10px;
   /* letter-spacing: 1px; */
 }
@@ -596,4 +596,49 @@ h2 {
   margin-right: auto;
 }
 
+.login-button {
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 5%;
+  background-color: #ffffff;
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: #3D3935 1px solid;
+}
 
+.name-title {
+  text-align: right;
+  width: 100%;
+  font-size: 3vmin;
+}
+
+.inputName {
+  text-align: left;
+  width: 100%;
+}
+
+.form-control {
+  padding: 0%;
+}
+
+.display-error {
+  color: #FF2D2D;
+  font-size: 2vmin;
+  visibility: hidden;
+}
+
+.modal-title {
+  margin-bottom: 20px;
+}
+
+.indexPageImg {
+  border-radius: 50%;
+  width: 20vmin;
+  margin-bottom: 20px;
+}
+
+.modal-body {
+  text-align: center;
+}
