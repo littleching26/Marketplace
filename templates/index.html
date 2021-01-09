@@ -1,5 +1,9 @@
 {% extends "base.html" %} {% block content %}
-<div class="col-12 block-title">捷徑</div>
+<head>
+</head>
+<div class="row">
+  <div class="col-12 block-title">捷徑</div>
+</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉">
@@ -17,8 +21,10 @@
   </div>
 </div>
 <div class="content-gap"></div>
-<div id="pay-section" onload="loadMiniApps({{pay}})"></div>
-<!-- <div class="col-12 block-title">繳費支付</div>
+<!-- <div id="pay-section" onload="loadMiniApps({{pay}})"></div> -->
+<div class="row">
+  <div class="col-12 block-title">繳費支付</div>
+</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉">
@@ -32,9 +38,11 @@
     <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉">
     <div class="img-description">CW Money</div>
   </div>
-</div> -->
+</div>
 <div class="content-gap"></div>
-<div class="col-12 block-title">社區服務</div>
+<div class="row">
+  <div class="col-12 block-title">社區服務</div>
+</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/netLife.png') }}" alt="讀不到圖片拉">
@@ -46,7 +54,9 @@
   </div>
 </div>
 <div class="content-gap"></div>
-<div class="col-12 block-title">餐飲</div>
+<div class="row">
+  <div class="col-12 block-title">餐飲</div>
+</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉">
