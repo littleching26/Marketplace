@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, redirect
 from flask import jsonify
-from pymongo import MongoClient
+from flask_pymongo import pymongo
 from connectDb import DBInformation
 import json
 from bson import json_util
@@ -30,11 +30,25 @@ def searchCarNumber():
 
 @app.route('/index/<userName>')
 def index(userName):
-    collect = DBInformation.connetToDb1('KMINI', 'USER_INFORMATION')
+    defaultImgUrl = 'img/ibmerLogo.png'
+    db = DBInformation.connetToDb('KMINI')
+    collectUserInformation = pymongo.collection.Collection(db, 'USER_INFORMATION')
+    collectMiniApplication = pymongo.collection.Collection(db, 'MINI_APPLICATION')
     # 這是用ajax的語法
     # print('--display json data--', request.get_json())
-    welcomeData = collect.find_one({'USER_NAME': userName}, {'_id': False})
-    return render_template('index.html', userInformation=welcomeData, imgUrl=welcomeData['IMG_URL'])
+    welcomeData = collectUserInformation.find_one({'USER_NAME': userName}, {'_id': False})
+    if(welcomeData is None):
+        welcomeData = {"USER_NAME": userName, "IMG_URL": defaultImgUrl, "SELECTED_MINIS": [], "POINTS": 0}
+        collectUserInformation.insert_one(welcomeData)
+
+    miniApps = collectMiniApplication.find({}, {'_id': False})
+    # 類型為繳費支付的miniApp
+    pay = []
+    for app in miniApps:
+        if(app['CATEGORY'] == 'pay'):
+            pay.append(app)
+    return render_template('index.html', welcomeData=welcomeData, pay=pay)
+     
     # return DataProcessService.multipleDataPopId(welcomeData)
 
     # return render_template('index.html')

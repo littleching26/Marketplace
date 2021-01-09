@@ -4,14 +4,14 @@
     <div class="col-6">
         First Name:
         <input type="text" class="form-control inputName" id="firstName" aria-describedby="nameHelp"
-            placeholder="ex: Clay">
-        <div class="display-error" id="inputCompleteSecondName">請輸入完整</div>
+            placeholder="ex: Clay" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
+        <div class="display-error" id="inputCompleteSecondName">此欄位為必填</div>
     </div>
     <div class="col-6">
         Second Name:
         <input type="text" class="form-control inputName" id="secondName" aria-describedby="nameHelp"
-            placeholder="ex: Lin">
-        <div class="display-error" id="inputCompleteFirstName">請輸入完整</div>
+            placeholder="ex: Lin" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
+        <div class="display-error" id="inputCompleteFirstName">此欄位為必填</div>
     </div>
 </div>
 <div class="align-center login-button" onclick="userLoginInfo()">登 入</div>

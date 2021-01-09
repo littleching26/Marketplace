@@ -17,8 +17,11 @@ $(document).ready(function () {
   esizeTimeout = setTimeout(function () {
     $('#welcomePage').modal('hide');
   }, 2000);
-  
 })
+
+function loadMiniApps(payList){
+  console.log(payList);
+}
 
 function userLoginInfo() {
   var firstName = $('#firstName').val();

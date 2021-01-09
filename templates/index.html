@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<div class="block-title">捷徑</div>
+<div class="col-12 block-title">捷徑</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉">
@@ -17,7 +17,8 @@
   </div>
 </div>
 <div class="content-gap"></div>
-<div class="block-title">繳費支付</div>
+<div id="pay-section" onload="loadMiniApps({{pay}})"></div>
+<!-- <div class="col-12 block-title">繳費支付</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉">
@@ -31,9 +32,9 @@
     <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉">
     <div class="img-description">CW Money</div>
   </div>
-</div>
+</div> -->
 <div class="content-gap"></div>
-<div class="block-title">社區服務</div>
+<div class="col-12 block-title">社區服務</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/netLife.png') }}" alt="讀不到圖片拉">
@@ -45,7 +46,7 @@
   </div>
 </div>
 <div class="content-gap"></div>
-<div class="block-title">餐飲</div>
+<div class="col-12 block-title">餐飲</div>
 <div class="row">
   <div class="col-3">
     <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉">
@@ -64,8 +65,8 @@
     <div class="modal-content">
       <div class="modal-body">
         <h5 class="modal-title" id="exampleModalLabel">歡迎回來！</h5>
-        <img class="indexPageImg" src="{{ url_for('static',filename=imgUrl) }}" alt="找不到圖片拉">
-        <div>{{userInformation['USER_NAME']}}</div>
+        <img class="indexPageImg" src="{{ url_for('static',filename=welcomeData['IMG_URL']) }}" alt="找不到圖片拉">
+        <div>{{welcomeData['USER_NAME']}}</div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
