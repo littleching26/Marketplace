@@ -5,16 +5,19 @@
         First Name:
         <input type="text" class="form-control inputName" id="firstName" aria-describedby="nameHelp"
             placeholder="ex: Clay" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
-        <div class="display-error" id="inputCompleteSecondName">此欄位為必填</div>
+        <div class="display-error" id="inputCompleteFirstName">此欄位為必填</div>
     </div>
     <div class="col-6">
         Second Name:
         <input type="text" class="form-control inputName" id="secondName" aria-describedby="nameHelp"
             placeholder="ex: Lin" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
-        <div class="display-error" id="inputCompleteFirstName">此欄位為必填</div>
+        <div class="display-error" id="inputCompleteSecondName">此欄位為必填</div>
     </div>
 </div>
 <div class="align-center login-button" onclick="userLoginInfo()">登 入</div>
 <div class="content-gap"></div>
 
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static',filename='js/login.js') }}"></script>
 {% endblock %}

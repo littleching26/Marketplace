@@ -5,15 +5,12 @@ from flask import jsonify
 # 處理資料以json形式回傳
 class DataProcessService:
     def multipleDataPopId(datas):
-        output = {}
-        i = 0
+        outputDatas = []
         for data in datas:
-            output[i] = data
-            output[i].pop('_id')
-            i += 1
-        return jsonify(output)
+            data.pop('_id')
+            outputDatas.append(data)
+        return jsonify(outputDatas)
 
     def singleDataPopId(data):
-        print('--display back data--', data)
         data = data.pop('_id')
         return jsonify(data)
