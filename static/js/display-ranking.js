@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    setInterval(function () { getRankingData() }, 2000); 
+    console.log('test');
+    window.setInterval(function () { getRankingData() }, 2000); 
 })
 function getRankingData() {
     $.ajax({

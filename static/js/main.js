@@ -6,6 +6,7 @@ $(document).ready(function () {
     $('#welcomePage').modal('hide');
   }, 3000);
 
+  $('.main').css('min-height', $(window).height()-100);
   $('#totalPoints').text(userData['POINTS']);
 })
 

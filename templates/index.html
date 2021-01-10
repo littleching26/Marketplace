@@ -1,74 +1,83 @@
 
 {% extends "base.html" %} 
 {% block content %}
-<div class="row">
-  <div class="col-12 block-title">捷徑</div>
-  <div class="col-12" id="totalPoints"></div>
+<div class="main">
+  <!-- <div class="col-12" id="totalPoints"></div> -->
+  <!-- onclick="addMiniPoint(2);" -->
+  <div class="row">
+    <div class="col-12 block-title">凱基小程序</div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/exchange.png') }}" alt="讀不到圖片拉"
+        onclick="addMiniPoint(30);">
+      <div class="img-description">外匯服務</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/loan.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">貸款服務</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/creditCard.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">信用卡服務</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/invest.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">投資理財</div>
+    </div>
+  </div>
+  <div class="content-gap"></div>
+  <div class="row">
+    <div class="col-12 block-title">繳費支付</div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(30);">
+      <div class="img-description">生活繳費王</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">Hami Pay生活繳費</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">CW Money</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">ParkPay</div>
+    </div>
+  </div>
+  <div class="content-gap"></div>
+  <div class="row">
+    <div class="col-12 block-title">服飾業</div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">UNIQLO</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">GAP</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">LATIV</div>
+    </div>
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">NET</div>
+    </div>
+  </div>
+  <div class="row block-title">
+    <div class="col-3">
+      <img class="content-img" src="{{ url_for('static',filename='img/gu.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">GU</div>
+    </div>
+  </div>
 </div>
-<div class="row">
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(3);">
-    <div class="img-description">Parkpay繳停車</div>
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/gang.png') }}" alt="讀不到圖片拉"onclick="addMiniPoint(2);">
-    <div class="img-description">社區幫</div>
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/Group 1897.png') }}" alt="讀不到圖片拉">
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/Group 1897.png') }}" alt="讀不到圖片拉">
-  </div>
-</div>
-<div class="content-gap"></div>
- <div id="pay-section" onload="loadMiniApps({{pay}})"></div> 
-<div class="row">
-  <div class="col-12 block-title">繳費支付</div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(30);">
-    <div class="img-description">生活繳費王</div>
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉">
-    <div class="img-description">Hami Pay生活繳費</div>
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉">
-    <div class="img-description">CW Money</div>
-  </div>
-</div>
-<div class="content-gap"></div>
-<div class="row">
-  <div class="col-12 block-title">社區服務</div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/netLife.png') }}" alt="讀不到圖片拉">
-    <div class="img-description">今網智生活</div>
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/growgrow.png') }}" alt="讀不到圖片拉">
-    <div class="img-description">果果智慧<br>社區</div>
-  </div>
-</div>
-<div class="content-gap"></div>
-<div class="row">
-  <div class="col-12 block-title">餐飲</div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉">
-    <div class="img-description">uniqlo</div>
-  </div>
-  <div class="col-3">
-    <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉">
-    <div class="img-description">gap</div>
-  </div>
-</div>
-<div class="content-gap"></div>
+
 
 <div class="modal fade" id="welcomePage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -85,6 +94,19 @@
     </div>
   </div>
 </div>
+<footer>
+  <div class="footer-gap"></div>
+  <div class="row">
+    <div class="col-6">
+      <img class="content-img" src="{{ url_for('static',filename='img/footerIcon1.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">首頁</div>
+    </div>
+    <div class="col-6">
+      <img class="content-img" src="{{ url_for('static',filename='img/footerIcon2.png') }}" alt="讀不到圖片拉">
+      <div class="img-description">分類</div>
+    </div>
+  </div>
+</footer>
 {% endblock %}
 {% block script %}
 <script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>

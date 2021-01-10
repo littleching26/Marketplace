@@ -659,3 +659,20 @@ h2 {
 .ranking-info {
   text-align: center;
 }
+
+.footer-gap{
+  margin: 0%;
+  width: 100%;
+  background-color: #F5F5F5;
+  height: 1vmin;
+}
+.main {
+  height: auto;
+  padding-bottom: 50px;
+}
+
+footer{
+  margin-top: -50px;
+  line-height: 50px;
+  height: 50px;
+}
