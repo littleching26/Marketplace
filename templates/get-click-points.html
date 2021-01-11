@@ -11,7 +11,7 @@
                 <img class="indexPageImg" src="{{ url_for('static',filename='img/kminiPoints.png') }}" alt="找不到圖片拉">
                 <h5 class="points">{{points}} 點</h5>
                 <div class="text-center">
-                    <button class="point-button check-points-center" onclick="pointsCenter('{{userName}}')">查看點數中心</button>
+                    <button class="point-button check-points-center" onclick="pointsCenter('{{userName}}', '{{email}}')">查看點數中心</button>
                 </div>
             </div>
         </div>
@@ -30,8 +30,8 @@
         $('#get-points').modal('show');
         
     });
-    function pointsCenter(userName){
-        window.location.href = '/exchange-item/' + userName
+    function pointsCenter(userName, email){
+        window.location.href = '/exchange-item/' + userName + '/' + email
     }
 </script>
 <script>

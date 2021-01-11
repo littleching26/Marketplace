@@ -7,7 +7,7 @@ function userLoginInfo() {
     if (validationSubmit()) {
         var fullName = firstName.toLowerCase() + ' ' + secondName.toLowerCase();
         var email = email.toLowerCase();
-        window.location.href = '/index/' + fullName + '/' + email;
+        window.location.href = '/index/' + fullName + '/' + email + '/' + true;
     }
     //檢查是否輸入完整
     function validationSubmit() {

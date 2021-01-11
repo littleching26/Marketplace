@@ -1,6 +1,7 @@
 
 {% extends "base.html" %} 
 {% block content %}
+<body onload="showModal('{{showModal}}')"></body>
 <div class="row">
   <div class="col-6" id="logoSize">
     <a href="/">
@@ -20,19 +21,19 @@
   </div>
   <div class="row">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/exchange.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(2);">
+      <img class="content-img" src="{{ url_for('static',filename='img/exchange.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}', 2);">
       <div class="img-description">外匯服務</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/loan.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(2);">
+      <img class="content-img" src="{{ url_for('static',filename='img/loan.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 2);">
       <div class="img-description">貸款服務</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/creditCard.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(3);">
+      <img class="content-img" src="{{ url_for('static',filename='img/creditCard.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 3);">
       <div class="img-description">信用卡服務</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/invest.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(10);">
+      <img class="content-img" src="{{ url_for('static',filename='img/invest.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 10);">
       <div class="img-description">投資理財</div>
     </div>
   </div>
@@ -42,19 +43,19 @@
   </div>
   <div class="row">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(5);">
+      <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 5);">
       <div class="img-description">生活繳費王</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(15);">
+      <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 15);">
       <div class="img-description">Hami Pay生活繳費</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(1);">
+      <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 1);">
       <div class="img-description">CW Money</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(5);">
+      <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 5);">
       <div class="img-description">ParkPay</div>
     </div>
   </div>
@@ -64,25 +65,25 @@
   </div>
   <div class="row">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(25);">
+      <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 25);">
       <div class="img-description">UNIQLO</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(20);">
+      <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 20);">
       <div class="img-description">GAP</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(5);">
+      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 5);">
       <div class="img-description">LATIV</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/net.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(15);">
+      <img class="content-img" src="{{ url_for('static',filename='img/net.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 15);">
       <div class="img-description">NET</div>
     </div>
   </div>
   <div class="row block-title">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/gu.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(50);">
+      <img class="content-img" src="{{ url_for('static',filename='img/gu.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint('{{userName}}', '{{email}}', '{{points}}' , 50);">
       <div class="img-description">GU</div>
     </div>
   </div>
@@ -108,7 +109,8 @@
   <div class="footer-gap"></div>
   <div class="row">
     <div class="col-6">
-      <img class="content-img" src="{{ url_for('static',filename='img/footerIcon1.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/footerIcon1.png') }}" alt="讀不到圖片拉"
+        onclick="pageToExchangeItem('{{userName}}', '{{email}}');">
       <div class="img-description">首頁</div>
     </div>
     <div class="col-6">
@@ -121,6 +123,8 @@
 {% block script %}
 <script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
 <script>
-  var userData = {{ welcomeData | safe}};
+  function pageToExchangeItem(userName, email) {
+      window.location.href = '/exchange-item/' + userName + '/' + email;
+    }
 </script>
 {% endblock %}

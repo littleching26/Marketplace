@@ -12,8 +12,15 @@
         </div>
     </div>
     <div class="title-gap"></div>
-    <div class="total-points">
+    <div class="container">
         <img id="totalPointsImg" src="{{ url_for('static',filename='img/totalPointsBackgroundImg.png') }}" alt="讀不到圖片拉">
+        <div id="showTotalPoints">
+            <img class="kmini-img" src="{{ url_for('static',filename='img/kminiPoints.png') }}" alt="">
+            <h5 id="exampleModalLabel">Kmini Points</h5>
+            <div class="text-center">
+                <div class="check-points-center">{{totalPoints}} 點</div>
+            </div>
+        </div>
     </div>
 </div>
 <footer>
@@ -23,7 +30,7 @@
             <img class="content-img" src="{{ url_for('static',filename='img/footerIcon1.png') }}" alt="讀不到圖片拉">
             <div class="img-description">首頁</div>
         </div>
-        <div class="col-6">
+        <div class="col-6" onclick="pageToIndex('{{userName}}', '{{email}}');">
             <img class="content-img" src="{{ url_for('static',filename='img/footerIcon2.png') }}" alt="讀不到圖片拉">
             <div class="img-description">分類</div>
         </div>
@@ -34,8 +41,15 @@
 <script>
     $(document).ready(function () {
         $('.main').css('min-height', $(window).height()-20);
-        $('#totalPointsImg').css('height', $(window).height() * 0.3);
-        $('#totalPointsImg').css('width', $(window).width());
+        $('.container').css('height', $(window).height() * 0.3);
+        $('.container').css('width', $(window).width());
+        $('#showTotalPoints').css('height', $(window).height() * 0.2);
+        console.log('line height', $('#showTotalPoints').height() * 0.5);
+        $('#showTotalPoints').css('padding-top', $('#showTotalPoints').height() * 0.5);
+        $('#showTotalPoints').css('width', $(window).width() * 0.8);
     });
+    function pageToIndex(userName, email){
+        window.location.href = '/index/' + userName + '/' + email + '/' + false;
+    }
 </script>
 {% endblock %}
