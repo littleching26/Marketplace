@@ -59,6 +59,9 @@ def displayRanking():
 @app.route('/get-ranking-data', methods=['POST'])
 def getRankingData():
     userDatas = collectUserInformation.find({}).sort('POINTS', -1).limit(5)
+    
+    for data in userDatas:
+        print('--check userDatas--', data)
     return DataProcessService.multipleDataPopId(userDatas)
 
 
