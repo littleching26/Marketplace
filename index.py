@@ -41,21 +41,15 @@ def addMiniPoint():
     return jsonify(userData)
 
 
-@app.route('/index/<userName>')
-def index(userName):
+@app.route('/index/<userName>/<email>')
+def index(userName, email):
     defaultImgUrl = 'img/ibmerLogo.png'
-    welcomeData = collectUserInformation.find_one({'USER_NAME': userName}, {'_id': False})
+    welcomeData = collectUserInformation.find_one({'USER_NAME': userName, "EMAIL": email}, {'_id': False})
     if(welcomeData is None):
-        welcomeData = {"USER_NAME": userName, "IMG_URL": defaultImgUrl, "POINTS": 0}
+        welcomeData = {"USER_NAME": userName, "IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
         collectUserInformation.insert_one(welcomeData)
 
-    miniApps = collectMiniApplication.find({}, {'_id': False})
-    # 類型為繳費支付的miniApp
-    pay = []
-    for app in miniApps:
-        if(app['CATEGORY'] == 'pay'):
-            pay.append(app)
-    return render_template('index.html', welcomeData=welcomeData, pay=pay, totalPoints=0)
+    return render_template('index.html', welcomeData=welcomeData)
 
 
 @app.route('/display-ranking')
@@ -66,6 +60,16 @@ def displayRanking():
 def getRankingData():
     userDatas = collectUserInformation.find({}).sort('POINTS', -1).limit(5)
     return DataProcessService.multipleDataPopId(userDatas)
+
+
+@app.route('/get-click-points/<points>/<userName>')
+def getClickPoints(points, userName):
+    return render_template('get-click-points.html', points=points, userName=userName)
+
+
+@app.route('/exchange-item/<userName>')
+def exchangeItem(userName):
+    return render_template('exchange-item.html', userName=userName)
 
 if __name__ == '__main__':
     app.run(debug=True)

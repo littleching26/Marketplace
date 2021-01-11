@@ -7,7 +7,7 @@ $(document).ready(function () {
   }, 3000);
 
   $('.main').css('min-height', $(window).height()-100);
-  $('#totalPoints').text(userData['POINTS']);
+  // $('#totalPoints').text(userData['POINTS']);
 })
 
 function addMiniPoint(pointNum) {
@@ -19,10 +19,12 @@ function addMiniPoint(pointNum) {
     data: JSON.stringify(userData),
     dataType: "json",
     success: function (response) {
-      totalPoints = response['POINTS']
-      userData = response
-      userData['POINTS'] = totalPoints
-      $('#totalPoints').text(totalPoints);
+      window.location.href = '/get-click-points/' + pointNum + '/' + response['USER_NAME'] ;
+      // window.location.href = '/get-click-points/' + userData ;
+      // totalPoints = response['POINTS']
+      // userData = response
+      // userData['POINTS'] = totalPoints
+      // $('#totalPoints').text(totalPoints);
     },
     error: function (err) {
       console.log(err);

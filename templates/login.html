@@ -1,4 +1,16 @@
 {% extends "base.html" %} {% block content %}
+<div class="row">
+    <div class="col-6" id="logoSize">
+        <a href="/">
+            <img id="logoImg" src="{{ url_for('static',filename='img/kgi-logo.jpeg') }}" alt="讀不到圖片拉">
+        </a>
+    </div>
+    <div class="col-6" id="logoBanner">
+        <img id="logoNav" class="nav-icon1" src="{{ url_for('static',filename='img/icon-6.png') }}" alt="讀不到圖片拉">
+        <img id="logoAudio" class="nav-icon2" src="{{ url_for('static',filename='img/group-1841.png') }}" alt="讀不到圖片拉">
+    </div>
+</div>
+<div class="title-gap"></div>
 <div class="block-title col-12">使用者登入(英文名字)</div>
 <div class="row">
     <div class="col-6">
@@ -14,6 +26,24 @@
         <div class="display-error" id="inputCompleteSecondName">此欄位為必填</div>
     </div>
 </div>
+<div class="row">
+    <div class="col-12">
+        請輸入IBM電子信箱
+    </div>
+</div>
+<div class="row">
+    <div class="col-8">
+        <input type="text" class="form-control inputName" id="inputEmail" placeholder="ex: Clay.Lin"
+            onkeyup="value=value.replace(/[^a-zA-Z/.]/g,'')">
+    </div>
+    <div class="col-4 sub-email-words">
+        <span>@(tw).ibm.com</span>
+    </div>
+</div>
+<div class="col-12">
+    <div class="display-error" id="inputCompleteEmail">此欄位為必填</div>
+</div>
+<div class="display-error" id="inputCompleteEmail">此欄位為必填</div>
 <div class="align-center login-button" onclick="userLoginInfo()">登 入</div>
 <div class="content-gap"></div>
 

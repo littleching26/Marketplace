@@ -1,0 +1,40 @@
+{% extends "base.html" %}{% block content %}
+<div class="main">
+    <img class="point-header" src="{{ url_for('static',filename='img/getPointsHeader.png') }}" alt="">
+</div>
+<div class="modal fade" id="get-points" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLabel">獲得點數</h5>
+                <img class="indexPageImg" src="{{ url_for('static',filename='img/kminiPoints.png') }}" alt="找不到圖片拉">
+                <h5 class="points">{{points}} 點</h5>
+                <div class="text-center">
+                    <button class="point-button check-points-center" onclick="pointsCenter('{{userName}}')">查看點數中心</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="text-center">
+        <button class="point-button">查看交易紀錄</button>
+    </div>
+</footer>
+{% endblock %}
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $('.main').css('min-height', $(window).height() - 50);
+        $('#get-points').modal('show');
+        
+    });
+    function pointsCenter(userName){
+        window.location.href = '/exchange-item/' + userName
+    }
+</script>
+<script>
+    
+</script>
+{% endblock %}

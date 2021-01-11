@@ -1,28 +1,38 @@
 
 {% extends "base.html" %} 
 {% block content %}
+<div class="row">
+  <div class="col-6" id="logoSize">
+    <a href="/">
+      <img id="logoImg" src="{{ url_for('static',filename='img/kgi-logo.jpeg') }}" alt="讀不到圖片拉">
+    </a>
+  </div>
+  <div class="col-6" id="logoBanner">
+    <img id="logoNav" class="nav-icon1" src="{{ url_for('static',filename='img/icon-6.png') }}" alt="讀不到圖片拉">
+    <img id="logoAudio" class="nav-icon2" src="{{ url_for('static',filename='img/group-1841.png') }}" alt="讀不到圖片拉">
+  </div>
+</div>
+<div class="title-gap"></div>
 <div class="main">
   <!-- <div class="col-12" id="totalPoints"></div> -->
-  <!-- onclick="addMiniPoint(2);" -->
   <div class="row">
     <div class="col-12 block-title">凱基小程序</div>
   </div>
   <div class="row">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/exchange.png') }}" alt="讀不到圖片拉"
-        onclick="addMiniPoint(30);">
+      <img class="content-img" src="{{ url_for('static',filename='img/exchange.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(2);">
       <div class="img-description">外匯服務</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/loan.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/loan.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(2);">
       <div class="img-description">貸款服務</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/creditCard.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/creditCard.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(3);">
       <div class="img-description">信用卡服務</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/invest.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/invest.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(10);">
       <div class="img-description">投資理財</div>
     </div>
   </div>
@@ -32,19 +42,19 @@
   </div>
   <div class="row">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(30);">
+      <img class="content-img" src="{{ url_for('static',filename='img/oaLogoLa.png') }}" alt="讀不到圖片拉" onclick="addMiniPoint(5);">
       <div class="img-description">生活繳費王</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/homiPay.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(15);">
       <div class="img-description">Hami Pay生活繳費</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/cwMoney.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(1);">
       <div class="img-description">CW Money</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/parkpay.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(5);">
       <div class="img-description">ParkPay</div>
     </div>
   </div>
@@ -54,25 +64,25 @@
   </div>
   <div class="row">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/uniqlo.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(25);">
       <div class="img-description">UNIQLO</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/gap.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(20);">
       <div class="img-description">GAP</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(5);">
       <div class="img-description">LATIV</div>
     </div>
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/lativ.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/net.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(15);">
       <div class="img-description">NET</div>
     </div>
   </div>
   <div class="row block-title">
     <div class="col-3">
-      <img class="content-img" src="{{ url_for('static',filename='img/gu.png') }}" alt="讀不到圖片拉">
+      <img class="content-img" src="{{ url_for('static',filename='img/gu.png') }}" alt="讀不到圖片拉"  onclick="addMiniPoint(50);">
       <div class="img-description">GU</div>
     </div>
   </div>
@@ -114,188 +124,3 @@
   var userData = {{ welcomeData | safe}};
 </script>
 {% endblock %}
-<!-- <nav class="navbar navbar-light custom-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">K M I N I</a>
-
-    <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
-      <span></span>
-    </a>
-  </div>
-</nav> -->
-<!-- <main id="main">
-  <section class="site-portfolio">
-    <div class="container">
-      <div class="row align-items-center"> -->
-        <!-- <div class="col-md-12 mb-4 mb-lg-0" data-aos="fade-up">
-          <h2>歡迎來到 K M I N I 小天地</h2>
-          <p class="mb-0">9 4 要 讓 你 離 不 開 我</p>
-        </div> -->
-        <!-- <div class="col-md-12 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
-          <div id="filters" class="filters">
-            <a href="#" data-filter="*" class="active">全 部</a>
-            <a href="#" data-filter=".pay">繳 費</a>
-            <a href="#" data-filter=".life">生 活</a>
-            <a href="#" data-filter=".finance">理 財</a>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div id="portfolio-grid" class="no-gutter" data-aos="fade-up" data-aos-delay="200"> -->
-        <!-- <div class="row">
-          <div class="item pay col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
-            <a href="pi-page" class="item-wrap fancybox" data-transition="slide">
-              <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/pay/parking.png') }}">
-            </a>
-          </div>
-          <div class="col-9 col-sm-9 col-md-9 col-lg-9 mb-9 app-title">停車大聲公<br>
-            <span class="app-content">在觀光景點找停車位絕對是十大頭痛問題之一，載著女友的你，絕對不會想要有找不到停車位的窘境。就編輯自身的經驗分享，真心覺得找不到停車位的時候很容易引發情侶之間吵架，為了小事情惹惱情緒傷害感情十分划不來。貼心男友可善用停車大聲公，絕對不讓女友等待過久的時間找停車位，讓約會過程更加順利！</span>
-          </div>
-        </div> -->
-        
-        <!-- <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>taxi-go</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/TaxiGo.png') }}">
-          </a>
-        </div> -->
-        <!--<div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>50嵐</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/50.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>健康人生</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/health2Sync.png') }}">
-          </a>
-        </div>
-        <div class="item pay col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>Line Pay</h3>
-              <span>Pay</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/linepay-logo-tw.png') }}">
-          </a>
-        </div>
-        <div class="item finance col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>GP-Invest</h3>
-              <span>finance</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/invest.jpg') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>潔客幫</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/jacker.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>global mall</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/globalMall.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>iCHEF</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/iCHEF.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>user eats</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/uber-eats.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>PChome</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/PChome24h.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>加天使</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/home_angel.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>優照護</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/care.jpg') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>food panda</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/foodPanda.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>約翰紅茶</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/john_tee.jpg') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>蝦皮</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/shopee.png') }}">
-          </a>
-        </div>
-        <div class="item life col-2 col-sm-2 col-md-2 col-lg-2 mb-2">
-          <a href="#" class="item-wrap fancybox">
-            <div class="work-info">
-              <h3>Friday Shopping</h3>
-              <span>life</span>
-            </div>
-            <img class="img-fluid" src="{{ url_for('static',filename='img/kmini-icon/life/friDayShopping.png') }}">
-          </a>
-        </div> -->
-      <!-- </div> -->
-  <!-- </section>End  Works Section -->
-<!-- </main>End #main -->

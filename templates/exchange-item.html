@@ -1,0 +1,41 @@
+{% extends "base.html" %}{% block content %}
+<div class="main">
+    <div class="row">
+        <div class="col-6" id="logoSize">
+            <a href="/">
+                <img id="logoImg" src="{{ url_for('static',filename='img/kgi-logo.jpeg') }}" alt="讀不到圖片拉">
+            </a>
+        </div>
+        <div class="col-6" id="logoBanner">
+            <img id="logoNav" class="nav-icon1" src="{{ url_for('static',filename='img/icon-6.png') }}" alt="讀不到圖片拉">
+            <img id="logoAudio" class="nav-icon2" src="{{ url_for('static',filename='img/group-1841.png') }}" alt="讀不到圖片拉">
+        </div>
+    </div>
+    <div class="title-gap"></div>
+    <div class="total-points">
+        <img id="totalPointsImg" src="{{ url_for('static',filename='img/totalPointsBackgroundImg.png') }}" alt="讀不到圖片拉">
+    </div>
+</div>
+<footer>
+    <div class="footer-gap"></div>
+    <div class="row">
+        <div class="col-6">
+            <img class="content-img" src="{{ url_for('static',filename='img/footerIcon1.png') }}" alt="讀不到圖片拉">
+            <div class="img-description">首頁</div>
+        </div>
+        <div class="col-6">
+            <img class="content-img" src="{{ url_for('static',filename='img/footerIcon2.png') }}" alt="讀不到圖片拉">
+            <div class="img-description">分類</div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $('.main').css('min-height', $(window).height()-20);
+        $('#totalPointsImg').css('height', $(window).height() * 0.3);
+        $('#totalPointsImg').css('width', $(window).width());
+    });
+</script>
+{% endblock %}

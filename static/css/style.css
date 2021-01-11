@@ -676,3 +676,44 @@ footer{
   line-height: 50px;
   height: 50px;
 }
+
+.point-header {
+  width: 100%;
+  height: 13vmin;
+}
+
+.point-button {
+  background-color: #256194;
+  border-radius: 10%;
+  width: 80%;
+  color: #F5F5F5;
+}
+
+.check-points-center {
+  margin-top: 10px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.points{
+  font-weight: 100%;
+}
+
+.total-points{
+  text-align: center;
+
+}
+
+#totalPointsImg {
+  width: 100%;
+}
+
+.sub-email-words{
+  margin-top: 5px;
+  margin-left: 0;
+}
+
+
+
