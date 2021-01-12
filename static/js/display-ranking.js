@@ -1,7 +1,7 @@
 $(document).ready(function () {
 })
 function start(){
-    var timer = 5;
+    var timer = 30;
     var interval = setInterval(function () {
         timer = timer - 1;
         $('#timer').html(timer);
