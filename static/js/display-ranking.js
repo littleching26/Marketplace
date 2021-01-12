@@ -1,7 +1,13 @@
 $(document).ready(function () {
-    console.log('test');
-    window.setInterval(function () { getRankingData() }, 2000); 
 })
+function start(){
+    var timer = 30;
+    window.setInterval(function () {
+        timer = timer - 1;
+        $('#timer').html(timer);
+        getRankingData();
+    }, 1000); 
+}
 function getRankingData() {
     $.ajax({
         type: "POST",
