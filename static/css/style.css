@@ -607,7 +607,7 @@ h2 {
 .login-button {
   text-align: center;
   margin-top: 20px;
-  border-radius: 5%;
+  border-radius: 6%;
   background-color: #ffffff;
   width: 30%;
   display: block;
@@ -744,4 +744,10 @@ footer{
   border-radius: 50%;
   width: 15vmin;
   margin-top: -70px;
+}
+
+.clear-point {
+  visibility: hidden;
+  width: 50px;
+  height: 30px;
 }

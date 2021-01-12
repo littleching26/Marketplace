@@ -32,24 +32,33 @@ def searchCarNumber():
 @app.route('/add-mini-point', methods=['POST'])
 def addMiniPoint():
     userData = request.get_json()
-    print('--test userData--', userData)
     roundPoint = userData.pop('THIS_ROUND_POINTS')
     #加總得分
     totalPoints = userData['POINTS'] + roundPoint
-    collectUserInformation.update_one( userData, {"$set": {'POINTS': totalPoints}})
+    collectUserInformation.update_one(
+        {"EMAIL": userData['EMAIL']}, {"$set": {'POINTS': totalPoints}})
     #寫回值
     userData['POINTS'] = totalPoints
     return jsonify(userData)
 
 
-@app.route('/index/<userName>/<email>/<showModal>')
-def index(userName, email, showModal):
+# @app.route('/index/<userName>/<email>/<showModal>')
+# def index(userName, email, showModal):
+#     defaultImgUrl = 'img/ibmerLogo.png'
+#     welcomeData = collectUserInformation.find_one({'USER_NAME': userName, "EMAIL": email}, {'_id': False})
+#     if(welcomeData is None):
+#         welcomeData = {"USER_NAME": userName, "IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
+#         collectUserInformation.insert_one(welcomeData)
+#     return render_template('index.html', userName=userName, email=email, points=welcomeData['POINTS'], welcomeData=welcomeData, showModal=showModal)
+
+@app.route('/index/<email>')
+def index(email):
     defaultImgUrl = 'img/ibmerLogo.png'
-    welcomeData = collectUserInformation.find_one({'USER_NAME': userName, "EMAIL": email}, {'_id': False})
+    welcomeData = collectUserInformation.find_one({"EMAIL": email}, {'_id': False})
     if(welcomeData is None):
-        welcomeData = {"USER_NAME": userName, "IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
+        welcomeData = {"IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
         collectUserInformation.insert_one(welcomeData)
-    return render_template('index.html', userName=userName, email=email, points=welcomeData['POINTS'], welcomeData=welcomeData, showModal=showModal)
+    return render_template('index.html', email=email, points=welcomeData['POINTS'], imgUrl=welcomeData['IMG_URL'])
 
 
 @app.route('/display-ranking')
@@ -59,22 +68,39 @@ def displayRanking():
 @app.route('/get-ranking-data', methods=['POST'])
 def getRankingData():
     userDatas = collectUserInformation.find({}).sort('POINTS', -1).limit(5)
-    
-    for data in userDatas:
-        print('--check userDatas--', data)
     return DataProcessService.multipleDataPopId(userDatas)
 
 
-@app.route('/get-click-points/<points>/<userName>/<email>')
-def getClickPoints(points, userName, email):
-    return render_template('get-click-points.html', points=points, userName=userName, email=email)
+# @app.route('/get-click-points/<points>/<userName>/<email>')
+# def getClickPoints(points, userName, email):
+#     return render_template('get-click-points.html', points=points, userName=userName, email=email)
 
 
-@app.route('/exchange-item/<userName>/<email>')
-def exchangeItem(userName, email):
+@app.route('/get-click-points/<points>/<email>')
+def getClickPoints(points, email):
+    return render_template('get-click-points.html', points=points, email=email)
+
+
+# @app.route('/exchange-item/<userName>/<email>')
+# def exchangeItem(userName, email):
+#     userData = collectUserInformation.find_one(
+#         {'USER_NAME': userName, "EMAIL": email}, {'_id': False})
+#     return render_template('exchange-item.html', userName=userName, email=email, totalPoints=userData['POINTS'])
+
+@app.route('/exchange-item/<email>/<showModal>')
+def exchangeItem(email, showModal):
     userData = collectUserInformation.find_one(
-        {'USER_NAME': userName, "EMAIL": email}, {'_id': False})
-    return render_template('exchange-item.html', userName=userName, email=email, totalPoints=userData['POINTS'])
+        {"EMAIL": email}, {'_id': False})
+    return render_template('exchange-item.html', email=email, imgUrl=userData['IMG_URL'], totalPoints=userData['POINTS'], showModal=showModal)
+
+
+@app.route('/clear-points', methods=['POST'])
+def clearPoints():
+    collectUserInformation.update_many({},
+        {'$set': {
+            "POINTS": 0
+        }}, upsert=True)
+    return 'success'
 
 if __name__ == '__main__':
     app.run(debug=True)

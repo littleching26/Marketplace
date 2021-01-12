@@ -20,7 +20,7 @@ function getRankingData() {
                     '<div class="col-4 ranking-info">' +
                     // '<img class="content-img" src="{{ url_for(' + '"static",filename=' + '"' + response[i]['IMG_URL'] + '") }}" alt="讀不到圖片拉">'
                         '<img class="ranking-image" src="static/' + response[i]['IMG_URL'] + '" alt="讀不到圖片拉">' +
-                        '<div class="ranking-name">' + response[i]['USER_NAME'] + '</div>' +
+                        '<div class="ranking-name">' + response[i]['EMAIL'] + '@(tw.)ibm.com</div>' +
                     '</div>' + 
                     '<div class="col-4 ranking-info">' +
                         '<div class="block-title">' + response[i]['POINTS'] + '</div>' +

@@ -1,8 +1,9 @@
 {% extends "base.html" %}{% block content %}
+<body onload="showModal('{{showModal}}', '{{email}}')"></body>
 <div class="main">
     <div class="row">
         <div class="col-6" id="logoSize">
-            <a href="/">
+            <a href="/exchange-item/{{email}}/false">
                 <img id="logoImg" src="{{ url_for('static',filename='img/kgi-logo.jpeg') }}" alt="讀不到圖片拉">
             </a>
         </div>
@@ -23,6 +24,21 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="welcomePage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLabel">歡迎回來！</h5>
+                <img class="indexPageImg" src="{{ url_for('static',filename=imgUrl) }}" alt="找不到圖片拉">
+                <div>{{email}}@(tw.)ibm.com</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 <footer>
     <div class="footer-gap"></div>
     <div class="row">
@@ -30,7 +46,7 @@
             <img class="content-img" src="{{ url_for('static',filename='img/footerIcon1.png') }}" alt="讀不到圖片拉">
             <div class="img-description">首頁</div>
         </div>
-        <div class="col-6" onclick="pageToIndex('{{userName}}', '{{email}}');">
+        <div class="col-6" onclick="pageToIndex('{{email}}');">
             <img class="content-img" src="{{ url_for('static',filename='img/footerIcon2.png') }}" alt="讀不到圖片拉">
             <div class="img-description">分類</div>
         </div>
@@ -44,12 +60,26 @@
         $('.container').css('height', $(window).height() * 0.3);
         $('.container').css('width', $(window).width());
         $('#showTotalPoints').css('height', $(window).height() * 0.2);
-        console.log('line height', $('#showTotalPoints').height() * 0.5);
         $('#showTotalPoints').css('padding-top', $('#showTotalPoints').height() * 0.5);
         $('#showTotalPoints').css('width', $(window).width() * 0.8);
     });
-    function pageToIndex(userName, email){
-        window.location.href = '/index/' + userName + '/' + email + '/' + false;
+
+    function showModal(show, email) {
+        if (email == 'clay.lin') {
+            $('#ownerClearPoints').css('visibility', 'visible');
+        }
+        if (show == 'true') {
+            var resizeTimeout;
+            $('#welcomePage').modal('show');
+            clearTimeout(resizeTimeout)
+            esizeTimeout = setTimeout(function () {
+                $('#welcomePage').modal('hide');
+            }, 5000);
+        }
+    }
+
+    function pageToIndex(email){
+        window.location.href = '/index/' + email;
     }
 </script>
 {% endblock %}
