@@ -42,22 +42,6 @@ function addMiniPoint(email, points, pointNum) {
     }
   });
 }
-
-function clearPoint(){
-  $.ajax({
-    type: "POST",
-    url: "/clear-points",
-    contentType: "application/json",
-    data: {},
-    dataType: "json",
-    success: function (response) {
-    },
-    error: function (err) {
-      console.log(err);
-    }
-  });
-}
-
 function loadMiniApps(payList){
   console.log(payList);
 }

@@ -53,12 +53,8 @@ def addMiniPoint():
 
 @app.route('/index/<email>')
 def index(email):
-    defaultImgUrl = 'img/ibmerLogo.png'
-    welcomeData = collectUserInformation.find_one({"EMAIL": email}, {'_id': False})
-    if(welcomeData is None):
-        welcomeData = {"IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
-        collectUserInformation.insert_one(welcomeData)
-    return render_template('index.html', email=email, points=welcomeData['POINTS'], imgUrl=welcomeData['IMG_URL'])
+    userData = collectUserInformation.find_one({"EMAIL": email}, {'_id': False})
+    return render_template('index.html', email=email, points=userData['POINTS'], imgUrl=userData['IMG_URL'])
 
 
 @app.route('/display-ranking')
@@ -89,8 +85,11 @@ def getClickPoints(points, email):
 
 @app.route('/exchange-item/<email>/<showModal>')
 def exchangeItem(email, showModal):
-    userData = collectUserInformation.find_one(
-        {"EMAIL": email}, {'_id': False})
+    defaultImgUrl = 'img/ibmerLogo.png'
+    userData = collectUserInformation.find_one({"EMAIL": email}, {'_id': False})
+    if(userData is None):
+        userData = {"IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
+        collectUserInformation.insert_one(userData)
     return render_template('exchange-item.html', email=email, imgUrl=userData['IMG_URL'], totalPoints=userData['POINTS'], showModal=showModal)
 
 
