@@ -562,6 +562,7 @@ h2 {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  font-size: 7vmin;
 }
 
 #logoSize {
@@ -644,7 +645,6 @@ h2 {
 .indexPageImg {
   border-radius: 50%;
   width: 20vmin;
-  margin-bottom: 20px;
 }
 
 .modal-body {
@@ -744,6 +744,7 @@ footer{
   border-radius: 50%;
   width: 15vmin;
   margin-top: -70px;
+  position: relative;
 }
 
 .clear-point {

@@ -11,21 +11,6 @@
     </div>
 </div>
 <div class="title-gap"></div>
-<!-- <div class="block-title col-12">使用者登入(英文名字)</div> -->
-<!-- <div class="row">
-    <div class="col-6">
-        First Name:
-        <input type="text" class="form-control inputName" id="firstName" aria-describedby="nameHelp"
-            placeholder="ex: Clay" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
-        <div class="display-error" id="inputCompleteFirstName">此欄位為必填</div>
-    </div>
-    <div class="col-6">
-        Second Name:
-        <input type="text" class="form-control inputName" id="secondName" aria-describedby="nameHelp"
-            placeholder="ex: Lin" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
-        <div class="display-error" id="inputCompleteSecondName">此欄位為必填</div>
-    </div>
-</div> -->
 <div class="row">
     <div class="col-12">
         請輸入IBM電子信箱
@@ -34,7 +19,7 @@
 <div class="row">
     <div class="col-8">
         <input type="text" class="form-control inputName" id="inputEmail" placeholder="ex: Clay.Lin"
-            onkeyup="value=value.replace(/[^a-zA-Z/.]/g,'')">
+            onkeyup="value=value.replace(/[^a-zA-Z0-9/.]/g,'')">
     </div>
     <div class="col-4 sub-email-words">
         <span>@(tw.)ibm.com</span>
