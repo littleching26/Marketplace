@@ -562,6 +562,12 @@ h2 {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.ranking-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
   font-size: 7vmin;
 }
 

@@ -31,7 +31,7 @@ function getRankingData() {
                 rankingData += 
                 '<div class="row">' + 
                     '<div class="col-4 ranking-info">' + 
-                        '<div class="block-title">' + (i+1).toString() +'</div>' +
+                        '<div class="ranking-title">' + (i+1).toString() +'</div>' +
                     '</div>' +
                     '<div class="col-4 ranking-info">' +
                     // '<img class="content-img" src="{{ url_for(' + '"static",filename=' + '"' + response[i]['IMG_URL'] + '") }}" alt="讀不到圖片拉">'
@@ -39,7 +39,7 @@ function getRankingData() {
                         '<div class="ranking-name">' + response[i]['EMAIL'] + '@(tw.)ibm.com</div>' +
                     '</div>' + 
                     '<div class="col-4 ranking-info">' +
-                        '<div class="block-title">' + response[i]['POINTS'] + '</div>' +
+                        '<div class="ranking-title">' + response[i]['POINTS'] + '</div>' +
                     '</div>' +
                 '</div>'
             }
