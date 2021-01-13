@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    //初始頁面
+    getRankingData();
 })
 function start(){
     var timer = 15;
