@@ -3,7 +3,7 @@ $(document).ready(function () {
     getRankingData();
 })
 function start(){
-    var timer = 15;
+    var timer = 20;
     var interval = setInterval(function () {
         timer = timer - 1;
         $('#timer').html(timer);
