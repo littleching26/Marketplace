@@ -568,7 +568,17 @@ h2 {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  font-size: 5vmin;
+}
+
+.float-right{
+  position: absolute;
+  text-align: right;
   font-size: 7vmin;
+}
+
+.login-people{
+  font-size: 10vmin;
 }
 
 #logoSize {
@@ -659,7 +669,7 @@ h2 {
 
 .ranking-image{
   border-radius: 50%;
-  width: 20vmin;
+  width: 15vmin;
 }
 
 .ranking-info {

@@ -1,6 +1,10 @@
+const loginPeopleLimit = 20;
 $(document).ready(function () {
     //初始頁面
     getRankingData();
+
+    //每秒偵測登入人數
+    checkLoginPeople();
 })
 function start(){
     var timer = 20;
@@ -17,9 +21,32 @@ function start(){
     }
 }
 
-function myStopFunction() {
-    clearInterval(myVar);
+function checkLoginPeople(){
+    var timer = 60;
+    var interval = setInterval(function () {
+        timer = timer - 1;
+        $.ajax({
+            type: "POST",
+            url: "/get-login-people",
+            contentType: "application/json",
+            data: {},
+            dataType: "json",
+            success: function (response) {
+                $('#login-people').html(response);
+                if (response >= loginPeopleLimit){
+                    stop();
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }, 1000);
+    function stop() {
+        clearInterval(interval);
+    }    
 }
+
 function getRankingData() {
     $.ajax({
         type: "POST",
@@ -29,19 +56,28 @@ function getRankingData() {
         dataType: "json",
         success: function (response) {
             var rankingData = '';
-            for(var i = 0; i < response.length; i++){
+            for(var i = 0; i < response.length - 5; i++){
                 rankingData += 
                 '<div class="row">' + 
-                    '<div class="col-4 ranking-info">' + 
+                    '<div class="col-2 ranking-info">' + 
                         '<div class="ranking-title">' + (i+1).toString() +'</div>' +
                     '</div>' +
-                    '<div class="col-4 ranking-info">' +
-                    // '<img class="content-img" src="{{ url_for(' + '"static",filename=' + '"' + response[i]['IMG_URL'] + '") }}" alt="讀不到圖片拉">'
+                    '<div class="col-2 ranking-info">' +
                         '<img class="ranking-image" src="static/' + response[i]['IMG_URL'] + '" alt="static/img/ibmerLogo.png">' +
                         '<div class="ranking-name">' + response[i]['EMAIL'] + '@(tw.)ibm.com</div>' +
                     '</div>' + 
-                    '<div class="col-4 ranking-info">' +
+                    '<div class="col-2 ranking-info">' +
                         '<div class="ranking-title">' + response[i]['POINTS'] + '</div>' +
+                    '</div>' +
+                    '<div class="col-2 ranking-info">' +
+                        '<div class="ranking-title">' + (i + 6).toString() + '</div>' +
+                    '</div>' +
+                    '<div class="col-2 ranking-info">' +
+                        '<img class="ranking-image" src="static/' + response[i+5]['IMG_URL'] + '" alt="static/img/ibmerLogo.png">' +
+                        '<div class="ranking-name">' + response[i+5]['EMAIL'] + '@(tw.)ibm.com</div>' +
+                    '</div>' +
+                    '<div class="col-2 ranking-info">' +
+                        '<div class="ranking-title">' + response[i+5]['POINTS'] + '</div>' +
                     '</div>' +
                 '</div>'
             }

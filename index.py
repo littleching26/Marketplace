@@ -12,6 +12,7 @@ app = Flask(__name__)
 db = DBInformation.connetToDb('KMINI')
 collectUserInformation = pymongo.collection.Collection(db, 'USER_INFORMATION')
 collectMiniApplication = pymongo.collection.Collection(db, 'MINI_APPLICATION')
+collectLoginPeople = pymongo.collection.Collection(db, 'LOGIN_PEOPLE')
 
 @app.route('/')
 def login():
@@ -42,14 +43,25 @@ def addMiniPoint():
     return jsonify(userData)
 
 
-# @app.route('/index/<userName>/<email>/<showModal>')
-# def index(userName, email, showModal):
-#     defaultImgUrl = 'img/ibmerLogo.png'
-#     welcomeData = collectUserInformation.find_one({'USER_NAME': userName, "EMAIL": email}, {'_id': False})
-#     if(welcomeData is None):
-#         welcomeData = {"USER_NAME": userName, "IMG_URL": defaultImgUrl, "POINTS": 0, "EMAIL": email}
-#         collectUserInformation.insert_one(welcomeData)
-#     return render_template('index.html', userName=userName, email=email, points=welcomeData['POINTS'], welcomeData=welcomeData, showModal=showModal)
+@app.route('/get-login-people-number', methods=['POST'])
+def getLoginPeopleNumber():
+    userData = request.get_json()
+    peopleNumber = userData['peopleNumber']
+    loginEmail = userData['email']
+    #取得人數
+    resultData = collectLoginPeople.find_one({}, {'_id': False})
+    if(resultData['PEOPLE'] >= peopleNumber and loginEmail != 'clay.lin'):
+        return jsonify(False)
+    else:
+        collectLoginPeople.update_one(
+            {}, {"$set": {'PEOPLE': resultData['PEOPLE'] + 1}})
+        return jsonify(True)
+
+@app.route('/get-login-people', methods=['POST'])
+def getLoginPeople():
+    #取得人數
+    resultData = collectLoginPeople.find_one({}, {'_id': False})
+    return jsonify(resultData['PEOPLE'])
 
 @app.route('/index/<email>')
 def index(email):
@@ -63,7 +75,7 @@ def displayRanking():
 
 @app.route('/get-ranking-data', methods=['POST'])
 def getRankingData():
-    userDatas = collectUserInformation.find({}).sort('POINTS', -1).limit(5)
+    userDatas = collectUserInformation.find({}).sort('POINTS', -1).limit(10)
     return DataProcessService.multipleDataPopId(userDatas)
 
 
@@ -99,7 +111,14 @@ def clearPoints():
         {'$set': {
             "POINTS": 0
         }}, upsert=True)
-    return 'success'
+    return jsonify('success')
+
+
+@app.route('/clear-login-people', methods=['POST'])
+def clearLoginPeople():
+    collectLoginPeople.update_one(
+        {}, {"$set": {'PEOPLE': 0}})
+    return jsonify('success')
 
 if __name__ == '__main__':
     app.run(debug=True)
